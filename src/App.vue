@@ -1,11 +1,13 @@
 <script>
 import PageHeader from './components/PageHeader.vue';
 import MatchSection from './components/MatchSection.vue';
+import UpcomingSection from './components/UpcomingSection.vue';
 
 export default {
   components: {
     PageHeader,
-    MatchSection
+    MatchSection,
+    UpcomingSection
   }
 }
 </script>
@@ -16,6 +18,7 @@ export default {
 
   <main>
     <MatchSection></MatchSection>
+    <UpcomingSection></UpcomingSection>
   </main>
 
 </template>
