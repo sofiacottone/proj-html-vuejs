@@ -12,7 +12,7 @@ export default {
         <!-- match  -->
         <div class="d-flex justify-content-center align-items-center my-4">
             <div class="d-flex align-items-center">
-                <h4>Instanbul Sports</h4>
+                <h4>Istanbul Sports</h4>
                 <img src="../assets/img/club-1.png" alt="Instanbul Sports">
             </div>
             <div class="ms-versus fw-bold p-4">VS</div>
@@ -30,7 +30,7 @@ export default {
 
             <div class="d-flex align-items-center gap-1">
                 <i class="fa-regular fa-circle-xmark fa-rotate-by"></i>
-                <span class="fw-bold">Export Stadium</span>
+                <span class="fw-bold">Expert Stadium</span>
             </div>
         </div>
         <!-- button  -->
