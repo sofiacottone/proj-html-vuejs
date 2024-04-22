@@ -1,9 +1,15 @@
-<script></script>
+<script>
+import PageHeader from './components/PageHeader.vue';
+
+export default {
+  components: {
+    PageHeader
+  }
+}
+</script>
 
 <template>
-  <div class="container">
-    <div class="card">ciao</div>
-  </div>
+  <PageHeader></PageHeader>
 </template>
 
 <style lang="scss">
