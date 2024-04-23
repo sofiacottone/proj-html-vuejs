@@ -5,6 +5,7 @@ import UpcomingSection from './components/UpcomingSection.vue';
 import PlayersSection from './components/PlayersSection.vue';
 import TablesSection from './components/TablesSection.vue';
 import ClientsSection from './components/ClientsSection.vue';
+import ArticlesSection from './components/ArticlesSection.vue';
 
 export default {
   components: {
@@ -13,7 +14,8 @@ export default {
     UpcomingSection,
     PlayersSection,
     TablesSection,
-    ClientsSection
+    ClientsSection,
+    ArticlesSection
   }
 }
 </script>
@@ -28,6 +30,7 @@ export default {
     <PlayersSection></PlayersSection>
     <TablesSection></TablesSection>
     <ClientsSection></ClientsSection>
+    <ArticlesSection></ArticlesSection>
   </main>
 
 </template>
