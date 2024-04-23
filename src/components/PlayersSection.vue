@@ -10,7 +10,7 @@ export default {
 
         <!-- player cards  -->
         <div class="row row-cols-1 row-cols-md-4 g-4">
-            <div class="col">
+            <div class="col ms-single-card">
                 <div class="border-0 rounded-5 rounded-bottom-4 overflow-hidden position-relative">
                     <img src="../assets/img/player1.jpg" class="card-img-top" alt="...">
                     <div class="card-body rounded-4 text-white text-center py-3">
@@ -19,7 +19,7 @@ export default {
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col ms-single-card">
                 <div class="border-0 rounded-5 rounded-bottom-4 overflow-hidden position-relative">
                     <img src="../assets/img/player2.jpg" class="card-img-top" alt="...">
                     <div class="card-body rounded-4 text-white text-center py-3">
@@ -28,7 +28,7 @@ export default {
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col ms-single-card">
                 <div class="border-0 rounded-5 rounded-bottom-4 overflow-hidden position-relative">
                     <img src="../assets/img/player3.jpg" class="card-img-top" alt="...">
                     <div class="card-body rounded-4 text-white text-center py-3">
@@ -37,7 +37,7 @@ export default {
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col ms-single-card">
                 <div class="border-0 rounded-5 rounded-bottom-4 overflow-hidden position-relative">
                     <img src="../assets/img/player4.jpg" class="card-img-top" alt="...">
                     <div class="card-body rounded-4 text-white text-center py-3">
@@ -46,7 +46,6 @@ export default {
                     </div>
                 </div>
             </div>
-
         </div>
 
         <!-- button  -->
@@ -66,8 +65,12 @@ export default {
     background-repeat: no-repeat;
     min-height: 600px;
 
+    .ms-single-card {
+        min-height: 320px
+    }
+
     .card-img-top {
-        max-height: 340px;
+        min-height: 320px;
         object-fit: cover;
         object-position: top;
     }
@@ -78,9 +81,9 @@ export default {
         bottom: 0;
         width: 100%;
     }
+}
 
-    .btn {
-        background-color: #000;
-    }
+.btn {
+    background-color: #000;
 }
 </style>
