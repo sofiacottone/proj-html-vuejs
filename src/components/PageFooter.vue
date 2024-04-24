@@ -1,6 +1,14 @@
 <script>
+import { store } from '../store.js'
+
 export default {
     name: 'PageFooter',
+    data() {
+        return {
+            store,
+
+        }
+    },
 
 }
 </script>
@@ -17,19 +25,19 @@ export default {
                 <!-- place  -->
                 <div class="d-flex gap-3 mb-4">
                     <i class="fa-solid fa-location-dot"></i>
-                    <div>luogo</div>
+                    <div>{{ store.pageInfo.place }}</div>
                 </div>
 
                 <!-- tel  -->
                 <div class="d-flex gap-3 mb-4">
                     <i class="fa-solid fa-phone-volume"></i>
-                    <div>tel</div>
+                    <div>{{ store.pageInfo.tel }}</div>
                 </div>
 
                 <!-- mail  -->
                 <div class="d-flex gap-3">
                     <i class="fa-solid fa-envelope"></i>
-                    <div>mail</div>
+                    <div>{{ store.pageInfo.mail }}</div>
                 </div>
 
                 <!-- socials  -->
@@ -78,13 +86,25 @@ export default {
                 <div>
                     <h4>Education</h4>
                     <ul class="ps-3 text-uppercase">
-                        <li>link</li>
+                        <template v-for="(singleLink, index) in store.navLinks">
+                            <li v-if="store.navLinks[index].category == 'education'">
+                                <a role="button">
+                                    {{ singleLink.link }}
+                                </a>
+                            </li>
+                        </template>
                     </ul>
                 </div>
                 <div>
                     <h4>Quick Links</h4>
                     <ul class="ps-3 text-uppercase">
-                        <li>link</li>
+                        <template v-for="(singleLink, index) in store.navLinks">
+                            <li v-if="store.navLinks[index].category == 'quick links'">
+                                <a role="button">
+                                    {{ singleLink.link }}
+                                </a>
+                            </li>
+                        </template>
                     </ul>
                 </div>
             </div>
