@@ -10,9 +10,18 @@ export default {
     data() {
         return {
             store,
+            scrollPosition: 0
 
         }
     },
+    methods: {
+        updateScroll() {
+            this.scrollPosition = window.scrollY;
+        },
+    },
+    mounted() {
+        window.addEventListener('scroll', () => { this.updateScroll() });
+    }
 }
 </script>
 
@@ -20,8 +29,8 @@ export default {
     <header>
         <div class="container-fluid text-white text-center fw-bold">
             <!-- sponsors  -->
-            <div class="row ms-header-nav">
-                <div class="ms-logo-container">
+            <div class="row ms-header-nav p-0 m-0" :class="[scrollPosition >= 80 ? 'ms-small-nav' : 'ms-default-nav']">
+                <div class="ms-logo-container" :class="[scrollPosition >= 80 ? 'd-none' : '']">
                     <img src="../assets/img/sponsor1.png" alt="coca-cola logo">
                     <img src="../assets/img/sponsor2.png" alt="nike logo">
                     <img src="../assets/img/loader-football.png" alt="football club">
@@ -44,8 +53,8 @@ export default {
                     </svg>
                 </div>
                 <!-- navbar links  -->
-                <nav class="text-uppercase py-2">
-                    <ul class="d-flex justify-content-around">
+                <nav class="text-uppercase py-3">
+                    <ul class="d-flex justify-content-around mb-0">
                         <li v-for="singleLink in store.navLinks">
                             <a href="">{{ singleLink.link }}</a>
                         </li>
@@ -66,10 +75,18 @@ header {
     .container-fluid {
         height: $full-header-height;
 
+        .ms-default-nav {
+            min-height: 10rem;
+            opacity: 0.7;
+        }
+
+        .ms-small-nav {
+            height: 3.5rem;
+            opacity: 0.9;
+        }
+
         .ms-header-nav {
             background-color: #000;
-            opacity: 0.7;
-            min-height: 10rem;
             width: 100%;
             position: fixed;
             top: 0;
@@ -79,6 +96,11 @@ header {
 
         li {
             list-style-type: none;
+            border-bottom: 2px solid transparent;
+
+            &:hover {
+                border-bottom: 2px solid;
+            }
         }
 
     }
