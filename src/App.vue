@@ -6,6 +6,7 @@ import PlayersSection from './components/PlayersSection.vue';
 import TablesSection from './components/TablesSection.vue';
 import ClientsSection from './components/ClientsSection.vue';
 import ArticlesSection from './components/ArticlesSection.vue';
+import PageFooter from './components/PageFooter.vue';
 
 export default {
   components: {
@@ -15,7 +16,8 @@ export default {
     PlayersSection,
     TablesSection,
     ClientsSection,
-    ArticlesSection
+    ArticlesSection,
+    PageFooter
   }
 }
 </script>
@@ -32,6 +34,8 @@ export default {
     <ClientsSection></ClientsSection>
     <ArticlesSection></ArticlesSection>
   </main>
+
+  <PageFooter></PageFooter>
 
 </template>
 
