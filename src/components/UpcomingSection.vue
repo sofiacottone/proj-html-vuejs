@@ -9,13 +9,9 @@ export default {
 </script>
 
 <template>
-    <div class="container-fluid text-white py-4">
+    <div id="matches" class="container-fluid text-white py-4">
         <h3 class="pb-4 text-center">Upcoming Matches</h3>
 
-        <SingleMatch></SingleMatch>
-        <SingleMatch></SingleMatch>
-        <SingleMatch></SingleMatch>
-        <SingleMatch></SingleMatch>
         <SingleMatch></SingleMatch>
     </div>
 </template>
