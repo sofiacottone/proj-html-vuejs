@@ -10,7 +10,7 @@ export default {
     data() {
         return {
             store,
-            scrollPosition: 0
+            scrollPosition: 0,
 
         }
     },
@@ -55,9 +55,11 @@ export default {
                 <!-- navbar links  -->
                 <nav class="text-uppercase py-3">
                     <ul class="d-flex justify-content-around mb-0">
-                        <li v-for="singleLink in store.navLinks">
-                            <a href="">{{ singleLink.link }}</a>
-                        </li>
+                        <template v-for="singleLink in store.navLinks">
+                            <li>
+                                <a :href="'#' + singleLink.anchor">{{ singleLink.link }}</a>
+                            </li>
+                        </template>
                     </ul>
                 </nav>
             </div>
