@@ -1,27 +1,36 @@
 <script>
+import { store } from '../store.js'
+
 export default {
     name: 'SingleMatch',
-    components: {
-
+    data() {
+        return {
+            store,
+        }
+    },
+    methods: {
+        getImageUrl(name) {
+            return new URL(`../assets/img/${name}`, import.meta.url).href;
+        }
     }
 }
 </script>
 
 <template>
-    <div class="ms-single-match col-11 mx-auto mb-3">
+    <div v-for="match in store.upcomingMatches" class="ms-single-match col-11 mx-auto mb-3">
         <!-- match  -->
         <div class="ms-min-h d-flex justify-content-center align-items-center">
             <div class="d-flex align-items-center">
                 <div class="ms-club-logo">
-                    <img class="img-fluid" src="../assets/img/club-3.png" alt="Instanbul Sports">
+                    <img class="img-fluid" :src="getImageUrl(match.homeTeam.logo)" :alt="match.homeTeam.name">
                 </div>
-                <h5>Schalke Club</h5>
+                <h5>{{ match.homeTeam.name }}</h5>
             </div>
             <div class="ms-versus fw-bold px-4 py-2">VS</div>
             <div class="d-flex align-items-center">
-                <h5>Inter Club</h5>
+                <h5>{{ match.guestTeam.name }}</h5>
                 <div class="ms-club-logo">
-                    <img class="img-fluid" src="../assets/img/club-4.png" alt="United Fs Club">
+                    <img class="img-fluid" :src="getImageUrl(match.guestTeam.logo)" :alt="match.guestTeam.name">
                 </div>
             </div>
         </div>
@@ -29,12 +38,12 @@ export default {
         <div class="ms-match-info d-flex justify-content-center align-items-center gap-4">
             <div class="d-flex align-items-center gap-1">
                 <i class="fa-solid fa-calendar-days"></i>
-                <small class="fw-bold">May 21, 2022 18:05</small>
+                <small class="fw-bold">{{ match.dateTime }}</small>
             </div>
 
             <div class="d-flex align-items-center gap-1">
                 <i class="fa-regular fa-circle-xmark fa-rotate-by"></i>
-                <small class="fw-bold">Expert Stadium</small>
+                <small class="fw-bold">{{ match.stadium }}</small>
             </div>
         </div>
     </div>
