@@ -33,9 +33,9 @@ export default {
 </script>
 
 <template>
-    <div class="row position-relative">
+    <div id="hero" class="row position-relative">
         <div class="ms-slider p-0">
-            <img class="img-fluid" :src="getImageUrl(store.slider[activeImage].image)">
+            <img class="img-fluid h-100 w-100" :src="getImageUrl(store.slider[activeImage].image)">
         </div>
         <div class="ms-hero-text d-flex justify-content-between align-items-center position-absolute">
             <!-- left  -->
