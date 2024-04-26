@@ -17,7 +17,7 @@ export default {
     <div class="container-fluid p-5">
         <div class="d-flex justify-content-between">
             <!-- contacts  -->
-            <div class="ms-contacts pe-3">
+            <div id="contacts" class="ms-contacts pe-3">
                 <div class="ms-logo-container mb-5">
                     <img class="img-fluid" src="../assets/img/logo-footer-football.png" alt="">
                 </div>
