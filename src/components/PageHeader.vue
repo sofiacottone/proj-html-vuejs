@@ -75,7 +75,7 @@ export default {
 header {
 
     .container-fluid {
-        height: $full-header-height;
+        max-height: $full-header-height;
 
         .ms-default-nav {
             min-height: 10rem;
