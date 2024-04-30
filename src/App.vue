@@ -18,13 +18,59 @@ export default {
     ClientsSection,
     ArticlesSection,
     PageFooter
+  },
+  data() {
+    return {
+      navLinks: [
+        {
+          link: 'home',
+          category: 'quick links',
+          anchor: '',
+        },
+        {
+          link: 'fixtures & results',
+          category: 'education',
+          anchor: 'fixtures',
+        },
+        {
+          link: 'league table',
+          category: 'education',
+          anchor: 'league',
+        },
+        {
+          link: 'players',
+          category: 'education',
+          anchor: 'players',
+        },
+        {
+          link: 'matches',
+          category: 'education',
+          anchor: 'matches',
+        },
+        {
+          link: 'blog',
+          category: 'quick links',
+          anchor: 'articles',
+        },
+        {
+          link: 'gallery',
+          category: 'quick links',
+          anchor: 'hero',
+        },
+        {
+          link: 'contact',
+          category: 'quick links',
+          anchor: 'contacts',
+        },
+      ],
+    }
   }
 }
 </script>
 
 <template>
 
-  <PageHeader></PageHeader>
+  <PageHeader :navbarLink="navLinks"></PageHeader>
 
   <main>
     <MatchSection></MatchSection>
@@ -35,7 +81,7 @@ export default {
     <ArticlesSection></ArticlesSection>
   </main>
 
-  <PageFooter></PageFooter>
+  <PageFooter :navbarLink="navLinks"></PageFooter>
 
 </template>
 
