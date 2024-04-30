@@ -89,7 +89,8 @@ export default {
 
         <!-- button  -->
         <div class="d-flex justify-content-center align-items-center gap-3 mt-5">
-            <button class="btn btn-outline-light rounded-5 py-4 px-5" @click="showLessPlayers = !showLessPlayers">
+            <button class="btn btn-outline-light rounded-5 py-4 px-5"
+                @click="showLessPlayers = !showLessPlayers; isFieldVisible = false">
                 {{ showLessPlayers === true ? "View All Players" : "Show Less" }}
             </button>
             <div @click="isFieldVisible = !isFieldVisible; showLessPlayers = true"
