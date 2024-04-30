@@ -3,6 +3,9 @@ import { store } from '../store.js'
 
 export default {
     name: 'PageFooter',
+    props: {
+        navbarLink: Object
+    },
     data() {
         return {
             store,
@@ -86,8 +89,8 @@ export default {
                 <div>
                     <h4>Education</h4>
                     <ul class="ps-3 text-uppercase">
-                        <template v-for="(singleLink, index) in store.navLinks">
-                            <li v-if="store.navLinks[index].category == 'education'">
+                        <template v-for="(singleLink, index) in navbarLink">
+                            <li v-if="navbarLink[index].category == 'education'">
                                 <a role="button">
                                     {{ singleLink.link }}
                                 </a>
@@ -98,8 +101,8 @@ export default {
                 <div>
                     <h4>Quick Links</h4>
                     <ul class="ps-3 text-uppercase">
-                        <template v-for="(singleLink, index) in store.navLinks">
-                            <li v-if="store.navLinks[index].category == 'quick links'">
+                        <template v-for="(singleLink, index) in navbarLink">
+                            <li v-if="navbarLink[index].category == 'quick links'">
                                 <a role="button">
                                     {{ singleLink.link }}
                                 </a>

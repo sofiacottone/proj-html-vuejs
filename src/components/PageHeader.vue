@@ -1,5 +1,4 @@
 <script>
-import { store } from '../store.js'
 import PageHero from './PageHero.vue'
 
 export default {
@@ -7,9 +6,11 @@ export default {
     components: {
         PageHero
     },
+    props: {
+        navbarLink: Object
+    },
     data() {
         return {
-            store,
             scrollPosition: 0,
 
         }
@@ -55,7 +56,7 @@ export default {
                 <!-- navbar links  -->
                 <nav class="text-uppercase py-3">
                     <ul class="d-flex justify-content-around mb-0">
-                        <template v-for="singleLink in store.navLinks">
+                        <template v-for="singleLink in navbarLink">
                             <li>
                                 <a :href="'#' + singleLink.anchor">{{ singleLink.link }}</a>
                             </li>
